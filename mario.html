@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Jeu Mario</title>
+	<meta name="description"
+		content="A Three.js powered animation that resembles the nightly view of fast cars on a road." />
+	<meta name="keywords"
+		content="webgl, three.js, cars, road, highway, lights, speed, web development, demo, javascript" />
+	<meta name="author" content="Codrops" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://use.typekit.net/uok8swb.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css" />
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/mario.css">
+
+	<script>
+		document.documentElement.className = "js";
+		var supportsCssVars = function () { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
+		supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+	</script>
+	<script>
+		function includeHTML() {
+			var z, i, elmnt, file, xhttp;
+			/*loop through a collection of all HTML elements:*/
+			z = document.getElementsByTagName("*");
+			for (i = 0; i < z.length; i++) {
+				elmnt = z[i];
+				/*search for elements with a certain atrribute:*/
+				file = elmnt.getAttribute("w3-include-html");
+				if (file) {
+					/*make an HTTP request using the attribute value as the file name:*/
+					xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function () {
+						if (this.readyState == 4) {
+							if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+							if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+							/*remove the attribute, and call this function once more:*/
+							elmnt.removeAttribute("w3-include-html");
+							includeHTML();
+						}
+					}
+					xhttp.open("GET", file, true);
+					xhttp.send();
+					/*exit the function:*/
+					return;
+				}
+			}
+		};
+	</script>
+
+</head>
+
+<body class="demo-7">
+	<main>
+		<div class="frame row">
+			<div class="frame__title-wrap col-md-8">
+
+				<div class="frame__links">
+					<a href="/">Accueil</a>
+					<a href="historique.html">Parcours</a>
+					<a href="competences.html">Compétences</a>
+					<a href="mario.html">Mario</a>
+					<a href="mail.html">Contact</a>
+					<a href="contact.html">Commentaires</a>
+
+				</div>
+			</div>
+			<div class="frame__info">Hint: Press to speed up</div>
+		</div>
+
+		<div class="content">
+			<div id="app"></div>
+			<div class="content__title-wrap col-md-12 pt-5">
+				<div id="map">
+                    <h1 id="titre">START GAME</h1>
+                    <span id="mario"></span>
+            
+                    <div class="pipe1"></div>
+                    <div class="pipe2"></div>
+                    <div class="pipe3"></div>
+                    <div class="pipe4"></div>
+            
+                    <div class="little-goomba-1"></div>
+                </div>
+
+			</div>
+		</div>
+
+
+	</main>
+
+	</main>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
+	<script>
+		includeHTML();
+    </script>
+    <script src="js/mario.js"></script>
+	<script src="js/three.min.js"></script>
+	<script src="js/postprocessing.min.js"></script>
+	<script src="js/InfiniteLights.js"></script>
+	<script src="js/Distortions.js"></script>
+	
+	<script src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Parcours</title>
+	<meta name="description"
+		content="A Three.js powered animation that resembles the nightly view of fast cars on a road." />
+	<meta name="keywords"
+		content="webgl, three.js, cars, road, highway, lights, speed, web development, demo, javascript" />
+	<meta name="author" content="Codrops" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://use.typekit.net/uok8swb.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css" />
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/historique.css">
+	
+
+	<script>
+		document.documentElement.className = "js";
+		var supportsCssVars = function () { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
+		supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+	</script>
+	<script>
+		function includeHTML() {
+			var z, i, elmnt, file, xhttp;
+			/*loop through a collection of all HTML elements:*/
+			z = document.getElementsByTagName("*");
+			for (i = 0; i < z.length; i++) {
+				elmnt = z[i];
+				/*search for elements with a certain atrribute:*/
+				file = elmnt.getAttribute("w3-include-html");
+				if (file) {
+					/*make an HTTP request using the attribute value as the file name:*/
+					xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function () {
+						if (this.readyState == 4) {
+							if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+							if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+							/*remove the attribute, and call this function once more:*/
+							elmnt.removeAttribute("w3-include-html");
+							includeHTML();
+						}
+					}
+					xhttp.open("GET", file, true);
+					xhttp.send();
+					/*exit the function:*/
+					return;
+				}
+			}
+		};
+	</script>
+
+</head>
+
+<body class="demo-7">
+	<main>
+		<div class="frame row">
+			<div class="frame__title-wrap col-md-8">
+
+				<div class="frame__links">
+					<a href="/">Accueil</a>
+					<a href="historique.html">Parcours</a>
+					<a href="competences.html">Compétences</a>
+					<a href="mario.html">Mario</a>
+					<a href="mail.html">Contact</a>
+					<a href="contact.html">Commentaires</a>
+
+				</div>
+			</div>
+			<div class="frame__info">Hint: Press to speed up</div>
+		</div>
+
+		<div class="content">
+			<div id="app"></div>
+			<div class="content__title-wrap col-md-12 pt-5">
+				<div class="row justify-content-center">
+					<img src="img/goku.png" alt="" id="goku">
+					<h1 class="col-md-12">Mon Parcours</h1>
+				</div>
+				<div class="row justify-content-center">
+					<h2 class="col-md-12"><img src="img/ssj1.jpg" alt=""> Ma scolarité</h2>
+					
+					<h3 class="col-md-8"> 1ère année de master d'immunologie</h3>
+					<p class="col-md-8">
+						De 2013 à 2014 j'étais à l'université Paris Sud à Orsay (91). <br>
+						Cette 1ère année que je n'ai pas prolongée ni obtenu m'aura permis de découvrir l'immunologie ainsi que son fonctionnement, sa régulation. <br>
+						Bien que très interessant j'ai perdu la motivation en cours d'année et me suis alors dirigé vers la recherche d'un emploi.
+						
+					</p>
+					<h3 class="col-md-8"> Licence Biologie</h3>
+					<p class="col-md-8">
+						De 2013 à 2014 j'étais à l'universite Evry Val d'essonne (91) . <br>
+						Cette licence comme son nom l'indique était orienté dans la biologie ce qui est assez vague, les principales matières étaient, la biologie cellulaire, la biochimie mais aussi beaucoup de génétique et de régulaion d'expression génique (comment le gène s'exprime et pourquoi il s'exprime). <br>
+						L'un des gros point de cette 3ème année (le BTS me permettant de "zapper" les 2 premières années), nous avons un excercice découpé en 2 parties, le 1er semestre nous avions uà choisir en groupe un article scientifique (en anglais) et avons eu à le décortiquer, le traduire pour l'expliquer ddevant le reste de la promotion. Lors du 2ème semestre nous avons eu à vulgariser, c'est à dire rendre cette article accessibles aux personnes non scientifiques (chose que faisait très bien l'émission "c'est pas sorcier"), nous avions 2 supports à produire, un diaporama pour l'exposer durant un colloque ouvert à n'importe qui et organisé par notre promotion de A à Z l'université fournissant les locaux, et un "poster" qui resumait l'article tou en devant être explicitement visuel.
+						
+					</p>
+					<h3 class="col-md-8"> BTS Bioanalyses et contrôles</h3>
+					<p class="col-md-8">
+						De 2011 à 2013 j'étais au lycée Jacques Monod dans la ville de Lescar (64). <br>
+						Ce BTS était orienté dans la Biochimie, les matières princiaples étaient la Biochimie, la Microbiologie et la Biologie cellulaire. <br>
+						Mon cursus a duré 2ans, il y a eu 3 mois de stage en entreprise, j'étais au laboratoire Galys de Toulouse, mon sujet de stage était la comparaison des analyses chimiques et par infrarouge sur les kiwis ce laboratoire étant un laboratoire d'analyses agroalimentaire. <br>
+						
+					</p>
+
+				</div>
+				<div class="row justify-content-center">
+					<h2 class="col-md-12"><img src="img/ssj2.jpeg" alt=""> Mon expérience professionnelle</h2>
+					<h3 class="col-md-8">Hopital de Bergerac Juin 2019 -> Septembre 2019</h3>
+					<p class="col-md-8">
+						Lors de cet emploi j'étais au poste d'hémostase, je devais réaliser les analyses, vérifier la validité des résultats via des contrôles réguliers des réactifs. <br>
+						Je survaillais le stock de réactifs pour toujours m'assurer d'avoir assez de réactifs et si besoin j'informais la responsable pour commander de nouveaux réactifs. J'étais aussi présent lors d'une visite du COFRAC même si l'hémostase n'était pas concerné. <br>
+						J'étais aussi reponsable de l'envoi inter site des échantillons.
+					</p>
+					<h3 class="col-md-8">Astralab Ussel Février 2018 -> Septembre 2018</h3>
+					<p class="col-md-8">
+						A ce poste de technicien-secretaire je vérifiais après l'enregistrement du dossier par les secretaires qu'il n'y avait pas d'erreurs, que les analyses demandées étaient les bonnes, que les tubes sanguins étaient bien identifiés.
+					</p>
+					<h3 class="col-md-8">Hopital de Rodez Novembre 2016 -> Février 2017</h3>
+					<p class="col-md-8">
+						Au poste d'hémostase je procedais aux analyses d'hémostase ainsi qu'aux analyses d'hémostase plus poussées (facteur willebrand).
+					</p>
+					<h3 class="col-md-8">Hopital de Millau Juin 2016 -> octobre 2016</h3>
+					<p class="col-md-8">
+						Ce 1er poste de technicien de laboratoire fut ma grande première, non seulement comme 1er emploi mais aussi une découverte du milieu médical qui n'étais pas ma formation, j'ai eu à m'adapté rapidement étant seul au poste 4jours après mon arrivée.
+						<br>
+						J'ai réalisé les analyses d'hémostase ainsi que les ensemencements de bactériologie. 
+					</p>
+
+				</div>
+				<div class="row justify-content-center ">
+					<h2 class="col-md-12"><img src="img/ssj3.jpg" alt=""> Ma reconversion</h2>
+					<h3 class="col-md-8">Formation developpeur web</h3>
+					<p class="col-md-8">
+						Fin 2018 je suis tombé par hasard sur un reportage parlant des formations de developpeur informatique, ayant toujours été interessé par l'informatique et n'arrivant pas à me poser comme technicien de laboratoire car je ne trouvais que des remplacements j'ai donc décidé de me renseigner pour me reconvertir dedans. <br>
+						Après une réunion au pôle emploi j'ai découvert openclassroom où j'ai commencé le cours de JS et vu que j'aimais bien j'ai pu demandé une formation de developpeur web de octobre 2019 à janvier 2020, formation organisé par webforce3 à la philomatique de Bordeaux (33). Formation où j'ai appris HTML/CSS/JS pour le front avec quelques bibliothèques comme boostrap ou jquery, pour le back on a vu PHP avec le framework Laravel, on a aussi vu très rapidement wordpress et eu une introduction à angular/cordova. <br>
+						Cette formation s'est conclue sur un projet de 2 semaines en groupe, mon groupe était en charge de réaliser un site ayant pour but la location de bornes électriques entres particuliers, ce site est en ligne à l'adresse : <a href="http://born.herokuapp.com/" class="lien">http://born.herokuapp.com/</a>   , sur ce projet j'étais en charge de la partie map avec l'intégration d'une map via leaflet, d'un syteme de routing avec un pluging de leaflet, j'ai aussi créé la barre pour déplacer sa géolocalisation. <br>
+						Bien qu'ayant été réalisé après la formation nous avions aussi eu droit à l'examen opquast où j'ai obtenu le score de 785/1000. 
+					</p>
+					<h3 class="col-md-8">Formation developpeur informatique</h2>
+					<p class="col-md-8">
+						Devant la difficulté de trouver un emploi au vu du contexte actuel et de mon manque d'expérience je me suis tourné vers le CESI de Bordeaux pour une formation de developpeur informatique en alternance <a href="https://catalogue.cesi.fr/developpeur-informatique-2169022-2020/" class="lien">https://catalogue.cesi.fr/developpeur-informatique-2169022-2020/</a> . <br>
+						Cette formation m'apportera plusieurs choses:
+						<ul class="col-md-8">
+							<li>Appronfondir mes connaissances</li>
+							<li>Apprendre certains langages utilisés comme JAVA ou .NET</li>
+							<li>Acquérir de l'expérience via la partie en alternance (3semaines/mois)</li>
+							<li>Développer mes compétences hors developpement</li>
+							
+						</ul>
+					</p>
+				</div>
+
+			</div>
+		</div>
+
+
+	</main>
+
+	</main>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
+	<script>
+		includeHTML();
+	</script>
+	<script src="js/three.min.js"></script>
+	<script src="js/postprocessing.min.js"></script>
+	<script src="js/InfiniteLights.js"></script>
+	<script src="js/Distortions.js"></script>
+	<script>
+		(function () {
+
+			const container = document.getElementById('app');
+
+			const options = {
+				onSpeedUp: (ev) => {
+				},
+				onSlowDown: (ev) => {
+				},
+				// mountainDistortion || LongRaceDistortion || xyDistortion || turbulentDistortion || turbulentDistortionStill || deepDistortionStill || deepDistortion
+				distortion: deepDistortion,
+
+				length: 400,
+				roadWidth: 9,
+				islandWidth: 2,
+				lanesPerRoad: 3,
+
+				fov: 90,
+				fovSpeedUp: 150,
+				speedUp: 2,
+				carLightsFade: 0.4,
+
+				totalSideLightSticks: 50,
+				lightPairsPerRoadWay: 50,
+
+				// Percentage of the lane's width
+				shoulderLinesWidthPercentage: 0.05,
+				brokenLinesWidthPercentage: 0.1,
+				brokenLinesLengthPercentage: 0.5,
+
+				/*** These ones have to be arrays of [min,max].  ***/
+				lightStickWidth: [0.12, 0.5],
+				lightStickHeight: [1.3, 1.7],
+
+				movingAwaySpeed: [60, 80],
+				movingCloserSpeed: [-120, -160],
+
+				/****  Anything below can be either a number or an array of [min,max] ****/
+
+				// Length of the lights. Best to be less than total length
+				carLightsLength: [400 * 0.05, 400 * 0.15],
+				// Radius of the tubes
+				carLightsRadius: [0.05, 0.14],
+				// Width is percentage of a lane. Numbers from 0 to 1
+				carWidthPercentage: [0.3, 0.5],
+				// How drunk the driver is.
+				// carWidthPercentage's max + carShiftX's max -> Cannot go over 1. 
+				// Or cars start going into other lanes 
+				carShiftX: [-0.2, 0.2],
+				// Self Explanatory
+				carFloorSeparation: [0.05, 1],
+
+				colors: {
+					roadColor: 0x080808,
+					islandColor: 0x0a0a0a,
+					background: 0x000000,
+					shoulderLines: 0x131318,
+					brokenLines: 0x131318,
+					/***  Only these colors can be an array ***/
+					leftCars: [0xE2173C, 0x841010, 0xF23D3D],
+					rightCars: [0xffffff, 0x7686BF, 0x1338B5],
+					sticks: 0xDCE0EE,
+				}
+			};
+
+			const myApp = new App(container, options);
+			myApp.loadAssets().then(myApp.init)
+		})()
+	</script>
+	<script src="js/app.js"></script>
+</body>
+
+</html>
