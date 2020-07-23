@@ -69,7 +69,7 @@
 					<a href="historique.html">Parcours</a>
 					<a href="competences.html">Compétences</a>
 					<a href="mario.html">Mario</a>
-					<a href="mail.html">Contact</a>
+					<a href="mail.html">Mail</a>
 					<a href="contact.html">Commentaires</a>
 
 				</div>
@@ -80,8 +80,21 @@
 		<div class="content">
 			<div id="app"></div>
 			<div class="content__title-wrap pt-5">
-
-				
+				<p>Votre message envoyé en copie sur le mail que vous indiquez</p>
+				<form action="" method="POST">
+					<div class="col-md-12">
+					<label for="" class="col-md-12">Votre adresse mail</label>
+					<input type="text" name="mailsend" id="" class="col-md-12">
+				</div>
+					<div class="col-md-12">
+					<label for="" class="col-md-12">titre de votre message</label>
+					<input type="text" name="title" class="col-md-12">
+				</div>
+					<div class="col-md-12">
+					<label for="" class="col-md-12">votre message</label>
+					<textarea name="text" id="text" cols="30" rows="10"></textarea>
+				</div>
+				<button type="submit" id="mail">Envoyer votre mail</button></form>
 				
 			</div>
 
@@ -100,6 +113,7 @@
 	<script src="js/postprocessing.min.js"></script>
 	<script src="js/InfiniteLights.js"></script>
 	<script src="js/Distortions.js"></script>
+	
 	
 	
 	<script>
